@@ -53,7 +53,7 @@ const SingleProduct = () => {
                         </div>
                     </div>
                 </div>
-                <RelatedProducts/>
+                <RelatedProducts />
             </div>
         </div>
     );
