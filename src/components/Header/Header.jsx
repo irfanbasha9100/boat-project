@@ -13,6 +13,7 @@ import { Context } from "../../utilis/context";
 const Header = () => {
     const [scrolled,setScrolled] = useState(false)
     const [showCart,setShowCart] = useState(false)
+    const [searched,setSearched] = useState(false)
 
     //to calculate the scroll percentage
     const handleScroll = ()=>{
@@ -37,7 +38,7 @@ const Header = () => {
             </ul>
             <div className="center">Boat Store</div>
             <div className="right">
-                <TbSearch />
+                <TbSearch  onClick={()=>setSearched(true)}/>
                 <AiOutlineHeart />
                 <span className="cart-icon" onClick={()=>setShowCart(true)} >
                     <FaShoppingCart />
@@ -47,6 +48,7 @@ const Header = () => {
         </div>
     </header>
     {showCart && <Cart setShowCart={setShowCart}/>}
+    {searched && <Search setSearched = {setSearched}/>}
     </>
     );
 };
